@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Simulação de Onda - Canvas </title>
+        <style>
+            canvas{
+                border:5px solid black;
+            }
+        </style>
+        <script type="text/javascript">
+         
+        </script>
+    </head>
+
+    <body>
+        <canvas id="canvas"></canvas>
+
+        <form>
+            Tipo de onda:<br />
+            <input type="radio" name="tipoOnda" value="progressiva" id="progRadio" checked > Progressiva<br />
+            <input type="radio" name="tipoOnda" value="regressiva"> Regressiva<br />
+            Amplitude da Onda:<input type="number" id="idAmplitude" min="1" max="250"><br />
+            Comprimento da Onda:<input type="number" id="idComprimento" min="1" max="250"><br />
+            Frequencia:<input type="number" id="idFrequencia" min="1" max="250"><br />
+            <button onclick="CriarOnda(getElementById('idAmplitude').value, getElementById('idComprimento').value, getElementById('idFrequencia').value, getElementById('progRadio').checked)">Criar</button>
+
+        </form>
+
+        <script type="text/javascript" src="script.js"></script>
+    </body>
+
+</html>
