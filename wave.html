@@ -1,33 +1,39 @@
 <!DOCTYPE html>
 <html>
-
     <head>
-        <title> Simulação de Onda - Canvas </title>
+        <title> SimulaÃ§Ã£o de Onda - Canvas </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <style>
             canvas{
                 border:5px solid black;
             }
         </style>
-        <script type="text/javascript">
-         
-        </script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
 
     <body>
         <canvas id="canvas"></canvas>
-
-        <form>
-            Tipo de onda:<br />
-            <input type="radio" name="tipoOnda" value="progressiva" id="progRadio" checked > Progressiva<br />
-            <input type="radio" name="tipoOnda" value="regressiva"> Regressiva<br />
-            Amplitude da Onda:<input type="number" id="idAmplitude" min="1" max="250"><br />
-            Comprimento da Onda:<input type="number" id="idComprimento" min="1" max="250"><br />
-            Frequencia:<input type="number" id="idFrequencia" min="1" max="250"><br />
-            <button onclick="CriarOnda(getElementById('idAmplitude').value, getElementById('idComprimento').value, getElementById('idFrequencia').value, getElementById('progRadio').checked)">Criar</button>
-
-        </form>
-
+        <div class="container">
+            <div class="form-group col-xs-2">
+            <label for="tipo">Tipo de onda:</label> <br />
+                <input  type="radio" name="tipoOnda" value="progressiva" id="tipo"> <label>Progressiva</label><br />
+                <input type="radio" name="tipoOnda" value="regressiva" id="tipo"> <label>Regressiva</label><br />
+            </div> 
+            <div class="form-group col-xs-2">
+                <label for="idAmplitude">Amplitude da Onda:</label><input class="form-control" type="number" id="idAmplitude" min="1" max="250"><br />
+            </div>
+            <div class="form-group col-xs-2">
+                <label for="idComprimento">Comprimento da Onda:</label><input class="form-control" type="number" id="idComprimento" min="1" max="250"><br />
+            </div>  
+            <div class="form-group col-xs-2">
+                <label>FrequÃªncia:</label><input class="form-control" type="number" id="idFrequencia" min="1" max="250"><br />
+            </div>
+                <button class="btn btn-primary" onclick="CriarOnda(getElementById('idAmplitude').value, getElementById('idComprimento').value, getElementById('idFrequencia').value)">Criar</button>
+        </div>   
         <script type="text/javascript" src="script.js"></script>
     </body>
-
 </html>

@@ -27,30 +27,7 @@ var DesenhaGrade = function () {
             ctx.stroke();
             ctx.closePath();
         }
-
-        var onda = {
-            x: 0,
-            y: 0,
-            k: 0,
-            w: 0,
-            amplitude:50,
-            lambda: 125,
-            frequencia: 0,
-            velocidade: 0,
-            periodo: 0,
-            progressiva:true
-        };
-
-
-        onda.periodo = 1 / onda.frequencia;
-        onda.k = (2 * Math.PI) / onda.lambda;
-        onda.w = (2 * Math.PI) / onda.periodo;
-        onda.velocidade = onda.lambda * onda.frequencia;
-        if (onda.progressiva)
-            onda.x = 0;
-        else
-            onda.x = LARGURA;
-    //Desenha a onda
+        
         var DesenhaOnda = function () {
 
             ctx.setTransform(1, 0, 0, 1, 0, 0);
@@ -76,6 +53,49 @@ var DesenhaGrade = function () {
 
         }
 
-        DesenhaGrade();
+        //passa os dados do campo a variável
+        function CriarOnda(amp, lam, fre, vel, per, tipo) {
+            var tipo = document.querySelector('input[id="tipo"]:checked').value;
+            if(tipo === "progressiva"){
+                    
+            }
+            var onda = {
+                x: 0,
+                y: 0,
+                k: 0,
+                w: 0,
+                amplitude:amp,
+                lambda: lam,
+                frequencia: fre,
+                velocidade: vel,
+                periodo: per,
+                progressiva: true
+            };
 
-        DesenhaOnda();
+            passaDados(onda);
+        }
+        var onda;
+        DesenhaGrade();
+        function passaDados(dados)
+        {
+            DesenhaGrade();
+            this.onda = dados;
+            console.log(onda);
+            onda.periodo = 1 / onda.frequencia;
+            onda.k = (2 * Math.PI) / onda.lambda;
+            onda.w = (2 * Math.PI) / onda.periodo;
+            onda.velocidade = onda.lambda * onda.frequencia;
+            if (onda.progressiva)
+                onda.x = 0;
+            else
+                onda.x = LARGURA;
+
+                DesenhaGrade();
+
+                DesenhaOnda();
+        } 
+        
+    //Desenha a onda
+        
+
+        
