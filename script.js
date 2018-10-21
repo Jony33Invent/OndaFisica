@@ -12,7 +12,7 @@ var DesenhaGrade = function () {
 
 
             //Desenha a grade
-            var i, qtdQuadrados = 1;
+            var i, qtdQuadrados = 2;
             ctx.beginPath();
             ctx.lineWidth = 2;
             ctx.strokeStyle = '#EEEEEE';
@@ -33,7 +33,7 @@ var DesenhaGrade = function () {
             y: 0,
             k: 0,
             w: 0,
-            amplitude:100,
+            amplitude:50,
             lambda: 125,
             frequencia: 0,
             velocidade: 0,
