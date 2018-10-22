@@ -59,6 +59,7 @@ var DesenhaGrade = function () {
             if(tipo === "progressiva"){
                     
             }
+
             var onda = {
                 x: 0,
                 y: 0,
@@ -89,6 +90,8 @@ var DesenhaGrade = function () {
                 onda.x = 0;
             else
                 onda.x = LARGURA;
+                
+                ctx.setTransform(1, 0, 0, 1, 0, 0);
 
                 DesenhaGrade();
 
