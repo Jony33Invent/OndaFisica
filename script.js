@@ -32,24 +32,27 @@ var DesenhaGrade = function () {
             
             ctx.setTransform(1, 0, 0, 1, 0, 0);
             ctx.translate(0, ALTURA / 2);
-            ctx.fillStyle = '#EEEE00';
+            ctx.strokeStyle = '#EEEE00';
             console.log(onda.progressiva);
             if (onda.progressiva) {
                 onda.y = Math.round(onda.amplitude * Math.sin((onda.k * onda.x) - (onda.w * t)));
-                ctx.fillRect(onda.x, onda.y, 2, 2);
+                ctx.lineTo(onda.x, onda.y);
                 onda.x++;
                 t++;
                 if (onda.x < LARGURA)
                     setTimeout(DesenhaOnda, 10);
+
             }
             else {
                 onda.y = Math.round(onda.amplitude * Math.sin((onda.k * onda.x) + (onda.w * t)));
-                ctx.fillRect(onda.x, onda.y, 2, 2);
+                ctx.lineTo(onda.x, onda.y);
                 onda.x--;
                 t++;
                 if(onda.x>0)
                     setTimeout(DesenhaOnda, 10);
             }
+
+            ctx.stroke();
         }
 
         //passa os dados do campo a variável
@@ -96,6 +99,7 @@ var DesenhaGrade = function () {
                 ctx.setTransform(1, 0, 0, 1, 0, 0);
                 DesenhaGrade();
                 //Desenha a onda
+                ctx.beginPath();
                 DesenhaOnda();
         } 
         
