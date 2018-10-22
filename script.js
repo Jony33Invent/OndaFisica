@@ -90,7 +90,7 @@ var DesenhaGrade = function () {
             else
                 onda.x = LARGURA;
 
-                ctx.setTransform(1, 0, 0, 1, 0, 0);
+                //ctx.setTransform(1, 0, 0, 1, 0, 0);
                 DesenhaGrade();
                 DesenhaOnda();
         } 
