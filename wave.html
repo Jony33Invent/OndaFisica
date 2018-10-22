@@ -7,40 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <style>
-            canvas{
-            }
-            body{
-                background-color: black;
-                color: white;
-            }
-
-            .div-principal{
-                border:3px solid white;
-                    overflow: auto;
-                    max-width: 900px; 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
-
-            }
-            .div-canvas{
-                float: left;
-
-                padding: 20px;
-            }
-             .div-form{
-                float: left;
-                width: 300px;
-                padding: 20px;
-
-            }
-            .btn{
-                float:right;
-            }
-        </style>
+        <link rel="stylesheet" href="style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script>
@@ -53,11 +20,29 @@
     </head>
 
     <body><center>
+    <div class="image-box">
+        <img src="logo.jpg" alt="">
+    </div>
+    <div class="menu col-sm-3">
+        <fieldset>
+            <legend style="color:aliceblue">Exemplos</legend>
+            <fieldset class="espectro-visivel" style="border-radius:15px;">
+                <legend style="color:aliceblue">Espectro da luz visível</legend>
+                <button class="espec violeta"></button>
+                <button class="espec anil"></button>
+                <button class="espec azul"></button>
+                <button class="espec verde"></button>
+                <button class="espec amarelo"></button>
+                <button class="espec laranja"></button>
+                <button class="espec vermelho"></button>
+            </fieldset>
+        </fieldset>
+    </div>
     <div class="div-principal">
         <div class="div-canvas">
             <canvas id="canvas"></canvas>
         </div>
-
+        
         <div class="div-form">
             <form class="form" id="form">
                 <div >

@@ -7,7 +7,7 @@ var c = document.getElementById('canvas'),
 var DesenhaGrade = function () {
 
             //Pinta canvas
-            ctx.fillStyle = '#000000';
+            ctx.fillStyle = 'rgba(8, 99, 24, 1)';
             ctx.fillRect(0, 0, LARGURA, ALTURA);
 
 
@@ -32,7 +32,7 @@ var DesenhaGrade = function () {
             
             ctx.setTransform(1, 0, 0, 1, 0, 0);
             ctx.translate(0, ALTURA / 2);
-            ctx.strokeStyle = '#EEEE00';
+            ctx.strokeStyle = 'rgba(255, 10, 10, 1)';
             if (onda.progressiva) {
                 onda.y = Math.round(onda.amplitude * Math.sin((onda.k * onda.x) - (onda.w * t)));
                 ctx.lineTo(onda.x, onda.y);

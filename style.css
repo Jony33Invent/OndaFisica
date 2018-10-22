@@ -1,0 +1,97 @@
+canvas{
+    }
+
+label{
+    font-size:20px;
+}
+body{              
+    background-color: rgba(0, 66, 12, 1);
+    color: white;
+}
+
+.div-principal{
+    border:3px solid white;
+    overflow: auto;
+    max-width: 900px; 
+    position: absolute;
+    top: 50%;
+    left:65%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+.menu{
+    border: 3px solid rgba(255, 255, 255, .9);
+    margin-top: 53px;
+    margin-left: 45px;
+    border-radius: 10px;
+    height: 550px;
+}
+
+.div-canvas{
+    float: left;
+    padding: 20px;
+}
+
+.div-form{
+    float: left;
+    width: 300px;
+    padding: 20px;
+
+}
+
+.espec{
+    width: 60px;
+    height: 60px;
+    margin: -1px;
+    border: none;
+}
+            
+.btn{
+    float:right;
+    width: 258px;
+}
+
+.violeta{
+    background-color: #973598; /* Green */
+}
+
+.anil{
+    background-color: #0265CB;
+}
+
+.azul{
+    background-color:#18D2E9;
+}
+
+.verde{
+    background-color: #68CB3C;
+}
+
+.amarelo{
+    background-color: #F4F400;
+}
+
+.laranja{
+    background-color: #F58D34;
+}
+
+.vermelho{
+    background-color: #F51209;
+}
+
+.espectro-visivel{
+    border: 2px solid black;
+    padding: 10px;
+}
+
+img{
+    width: 30%;
+    
+}
+
+.image-box{
+    position: absolute;
+    margin-left: 950px;
+    margin-top: 435px;
+}
