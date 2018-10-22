@@ -40,7 +40,9 @@ var DesenhaGrade = function () {
                 onda.x++;
                 t++;
                 if (onda.x < LARGURA)
-                    setTimeout(DesenhaOnda, 10);
+                    setTimeout(DesenhaOnda, 1);
+                else
+                    document.getElementById('idBotao').disabled=false;
 
             }
             else {
@@ -49,7 +51,10 @@ var DesenhaGrade = function () {
                 onda.x--;
                 t++;
                 if(onda.x>0)
-                    setTimeout(DesenhaOnda, 10);
+                    setTimeout(DesenhaOnda, 1);
+                else
+                    document.getElementById('idBotao').disabled=false;
+
             }
 
             ctx.stroke();
@@ -57,27 +62,31 @@ var DesenhaGrade = function () {
 
         //passa os dados do campo a variável
         function CriarOnda(amp, lam, fre, vel, per, tipo) {
-            var tipo = document.querySelector('input[id="tipo"]:checked').value;
-            if(tipo === "progressiva")
-                aux = true;
+            if(amp<=250 && amp>0 && lam<=1000 && lam>0 && fre>0 && fre<=250 ){
+
+                var tipo = document.querySelector('input[id="tipo"]:checked').value;
+                if(tipo === "progressiva")
+                    aux = true;
+                
+                if(tipo === "regressiva")
+                    aux = false;
+
+                var onda = {
+                    x: 0,
+                    y: 0,
+                    k: 0,
+                    w: 0,
+                    amplitude:amp,
+                    lambda: lam,
+                    frequencia: fre,
+                    velocidade: vel,
+                    periodo: per,
+                    progressiva: aux
+                };
+
+                passaDados(onda);
             
-            if(tipo === "regressiva")
-                aux = false;
-
-            var onda = {
-                x: 0,
-                y: 0,
-                k: 0,
-                w: 0,
-                amplitude:amp,
-                lambda: lam,
-                frequencia: fre,
-                velocidade: vel,
-                periodo: per,
-                progressiva: aux
-            };
-
-            passaDados(onda);
+            }
         }
 
         var onda;
@@ -95,12 +104,14 @@ var DesenhaGrade = function () {
                 onda.x = 0;
             else
                 onda.x = LARGURA;
-                //ve se vai agora
+
+                document.getElementById('idBotao').disabled=true;
                 ctx.setTransform(1, 0, 0, 1, 0, 0);
                 DesenhaGrade();
                 //Desenha a onda
                 ctx.beginPath();
                 DesenhaOnda();
+            
         } 
         
 
