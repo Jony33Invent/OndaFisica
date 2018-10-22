@@ -13,12 +13,18 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        
+        <script>
+            $(document).ready(function(){
+                $("#form").submit(function(){
+                    return event.preventDefault();
+                });
+            });
+        </script>
     </head>
 
     <body>
         <canvas id="canvas"></canvas>
-        <div class="container">
+        <form class="form" id="form">
             <div class="form-group col-xs-2">
             <label for="tipo">Tipo de onda:</label> <br />
                 <input  type="radio" name="tipoOnda" value="progressiva" id="tipo"> <label>Progressiva</label><br />
@@ -34,7 +40,9 @@
                 <label>Frequência:</label><input class="form-control" type="number" id="idFrequencia" min="1" max="250"><br />
             </div>
                 <button class="btn btn-primary" onclick="CriarOnda(getElementById('idAmplitude').value, getElementById('idComprimento').value, getElementById('idFrequencia').value)">Criar</button>
-        </div>   
-        <script type="text/javascript" src="script.js"></script>
+        </form>   
+        <script type="text/javascript" src="script.js">
+            
+        </script>
     </body>
 </html>
