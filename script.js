@@ -29,10 +29,11 @@ var DesenhaGrade = function () {
         }
         
         var DesenhaOnda = function () {
-
+            
             ctx.setTransform(1, 0, 0, 1, 0, 0);
             ctx.translate(0, ALTURA / 2);
             ctx.fillStyle = '#EEEE00';
+            console.log(onda.progressiva);
             if (onda.progressiva) {
                 onda.y = Math.round(onda.amplitude * Math.sin((onda.k * onda.x) - (onda.w * t)));
                 ctx.fillRect(onda.x, onda.y, 2, 2);
@@ -47,18 +48,19 @@ var DesenhaGrade = function () {
                 onda.x--;
                 t++;
                 if(onda.x>0)
-                setTimeout(DesenhaOnda, 10);
+                    setTimeout(DesenhaOnda, 10);
             }
-
-
         }
 
         //passa os dados do campo a variável
         function CriarOnda(amp, lam, fre, vel, per, tipo) {
             var tipo = document.querySelector('input[id="tipo"]:checked').value;
-            if(tipo === "progressiva"){
-                    
-            }
+            if(tipo === "progressiva")
+                aux = true;
+            
+            if(tipo === "regressiva")
+                aux = false;
+
             var onda = {
                 x: 0,
                 y: 0,
@@ -69,11 +71,12 @@ var DesenhaGrade = function () {
                 frequencia: fre,
                 velocidade: vel,
                 periodo: per,
-                progressiva: true
+                progressiva: aux
             };
 
             passaDados(onda);
         }
+
         var onda;
         DesenhaGrade();
         function passaDados(dados)
@@ -92,10 +95,11 @@ var DesenhaGrade = function () {
                 //ve se vai agora
                 ctx.setTransform(1, 0, 0, 1, 0, 0);
                 DesenhaGrade();
+                //Desenha a onda
                 DesenhaOnda();
         } 
         
-    //Desenha a onda
+
         
 
         
