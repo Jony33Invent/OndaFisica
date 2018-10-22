@@ -5,12 +5,42 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <style>
             canvas{
-                border:5px solid black;
+            }
+            body{
+                background-color: black;
+                color: white;
+            }
+
+            .div-principal{
+                border:3px solid white;
+                    overflow: auto;
+                    max-width: 900px; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+
+            }
+            .div-canvas{
+                float: left;
+
+                padding: 20px;
+            }
+             .div-form{
+                float: left;
+                width: 300px;
+                padding: 20px;
+
+            }
+            .btn{
+                float:right;
             }
         </style>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script>
@@ -22,25 +52,30 @@
         </script>
     </head>
 
-    <body>
-        <canvas id="canvas"></canvas>
-        <form class="form" id="form">
-            <div class="form-group col-xs-2">
-            <label for="tipo">Tipo de onda:</label> <br />
-                <input  type="radio" name="tipoOnda" value="progressiva" id="tipo"> <label>Progressiva</label><br />
-                <input type="radio" name="tipoOnda" value="regressiva" id="tipo"> <label>Regressiva</label><br />
-            </div> 
-            <div class="form-group col-xs-2">
-                <label for="idAmplitude">Amplitude da Onda:</label><input class="form-control" type="number" id="idAmplitude" min="1" max="250"><br />
-            </div>
-            <div class="form-group col-xs-2">
-                <label for="idComprimento">Comprimento da Onda:</label><input class="form-control" type="number" id="idComprimento" min="1" max="250"><br />
-            </div>  
-            <div class="form-group col-xs-2">
-                <label>Frequência:</label><input class="form-control" type="number" id="idFrequencia" min="1" max="250"><br />
-            </div>
-                <button class="btn btn-primary"  id="idBotao" onclick="CriarOnda(getElementById('idAmplitude').value, getElementById('idComprimento').value, getElementById('idFrequencia').value)">Criar</button>
-        </form>   
+    <body><center>
+    <div class="div-principal">
+        <div class="div-canvas">
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <div class="div-form">
+            <form class="form" id="form">
+                <div >
+                <label for="tipo">Tipo de onda:</label> <br />
+                    <input  type="radio" name="tipoOnda" value="progressiva" id="tipo" checked="true"> <label>Progressiva</label><br />
+                    <input type="radio" name="tipoOnda" value="regressiva" id="tipo"> <label>Regressiva</label>
+                </div> <br />
+                <div >
+                    <label for="idAmplitude">Amplitude da Onda:</label><input class="form-control" type="number" id="idAmplitude" min="1" max="250">
+                </div><br />
+                <div >
+                    <label for="idComprimento">Comprimento da Onda:</label><input class="form-control" type="number" id="idComprimento" min="10" max="250">
+                </div>  <br />
+                <br />
+                    <button class="btn btn-primary"  id="idBotao" onclick="CriarOnda(getElementById('idAmplitude').value, getElementById('idComprimento').value)">Criar</button>
+            </form>   
+        </div>
+    </div></center>
         <script type="text/javascript" src="script.js"></script>
     </body>
 </html>

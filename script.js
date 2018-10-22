@@ -12,7 +12,7 @@ var DesenhaGrade = function () {
 
 
             //Desenha a grade
-            var i, qtdQuadrados = 2;
+            var i, qtdQuadrados = 5;
             ctx.beginPath();
             ctx.lineWidth = 2;
             ctx.strokeStyle = '#EEEEEE';
@@ -33,7 +33,6 @@ var DesenhaGrade = function () {
             ctx.setTransform(1, 0, 0, 1, 0, 0);
             ctx.translate(0, ALTURA / 2);
             ctx.strokeStyle = '#EEEE00';
-            console.log(onda.progressiva);
             if (onda.progressiva) {
                 onda.y = Math.round(onda.amplitude * Math.sin((onda.k * onda.x) - (onda.w * t)));
                 ctx.lineTo(onda.x, onda.y);
@@ -62,8 +61,9 @@ var DesenhaGrade = function () {
 
         //passa os dados do campo a variável
         function CriarOnda(amp, lam, fre, vel, per, tipo) {
-            if(amp<=250 && amp>0 && lam<=1000 && lam>0 && fre>0 && fre<=250 ){
-
+            
+            if(amp<=250 && amp>0 && lam<=1000 && lam>=10 ){
+                fre=1;
                 var tipo = document.querySelector('input[id="tipo"]:checked').value;
                 if(tipo === "progressiva")
                     aux = true;
@@ -83,7 +83,6 @@ var DesenhaGrade = function () {
                     periodo: per,
                     progressiva: aux
                 };
-
                 passaDados(onda);
             
             }
@@ -93,8 +92,10 @@ var DesenhaGrade = function () {
         DesenhaGrade();
         function passaDados(dados)
         {
+
             DesenhaGrade();
             this.onda = dados;
+
             console.log(onda);
             onda.periodo = 1 / onda.frequencia;
             onda.k = (2 * Math.PI) / onda.lambda;
