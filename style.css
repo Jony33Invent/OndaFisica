@@ -95,3 +95,10 @@ img{
     margin-left: 950px;
     margin-top: 435px;
 }
+
+.info{
+    border-radius: 100px;
+    height: 30px;
+    background-color: rgb(17, 112, 35);
+    outline-style: none;
+}

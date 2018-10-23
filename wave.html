@@ -27,7 +27,9 @@
         <fieldset>
             <legend style="color:aliceblue">Exemplos</legend>
             <fieldset class="espectro-visivel" style="border-radius:15px;">
-                <legend style="color:aliceblue">Espectro da luz visível</legend>
+                <legend style="color:aliceblue">Espectro da luz visível
+                <button type="button" class="info" data-toggle="modal" data-target="#myModal">?</button>
+                </legend>
                 <button class="espec violeta"></button>
                 <button class="espec anil"></button>
                 <button class="espec azul"></button>
@@ -62,5 +64,22 @@
         </div>
     </div></center>
         <script type="text/javascript" src="script.js"></script>
+        <div id="myModal" class="modal fade" role="dialog" style="color:black">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">Informações</h4>
+                    </div>
+                    <div class="modal-body">
+                      <p>Info</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                    </div>
+                  </div>
+              
+                </div>
+              </div>
     </body>
 </html>

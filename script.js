@@ -93,7 +93,6 @@ var DesenhaGrade = function () {
         function passaDados(dados)
         {
 
-            DesenhaGrade();
             this.onda = dados;
 
             console.log(onda);
