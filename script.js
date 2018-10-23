@@ -14,7 +14,7 @@ var DesenhaGrade = function () {
             //Desenha a grade
             var i, qtdQuadrados = 5;
             ctx.beginPath();
-            ctx.lineWidth = 2;
+            ctx.lineWidth = 0.5;
             ctx.strokeStyle = '#EEEEEE';
             for (i = -qtdQuadrados; i <= qtdQuadrados; i++) {
                 ctx.moveTo((LARGURA / 2) - (LARGURA / (qtdQuadrados*2)) * i, 0);
@@ -51,7 +51,7 @@ var DesenhaGrade = function () {
                  }
             }
             else {
-                onda.y = Math.round(onda.amplitude * Math.sin((onda.k * onda.x) + (onda.w * t)));
+                onda.y = Math.round(onda.amplitude * Math.sin((onda.k * onda.x) + (onda.w * t)))+ALTURA/2;
                 ctx.lineTo(onda.x, onda.y);
                 onda.x--;
                 t++;
@@ -68,7 +68,8 @@ var DesenhaGrade = function () {
                     document.querySelector('.btn').disabled=false;
                  }
             }
-
+            
+            ctx.lineWidth=4;
             ctx.stroke();
         }
 

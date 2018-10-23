@@ -86,21 +86,25 @@ body{
     padding: 10px;
 }
 
-img{
+.img-logo{
     width: 13%; 
 }
-
+.img-espec{
+     width: 100%; 
+}
 .image-box{
     position: relative;
     z-index: -1;
 }
 
 .info{
-    position: relative;
-    float:right;
-    margin-top: -60px;
     border-radius: 100px;
     height: 25px;
     background-color: rgb(17, 112, 35);
     outline-style: none;
+}
+.inf2{
+    position: relative;
+    float:right;
+    margin-top: -60px;
 }
