@@ -51,7 +51,7 @@ var DesenhaGrade = function () {
                  }
             }
             else {
-                onda.y = Math.round(onda.amplitude * Math.sin((onda.k * onda.x) + (onda.w * t)));
+                onda.y = Math.round(onda.amplitude * Math.sin((onda.k * onda.x) + (onda.w * t)))+ALTURA/2;
                 ctx.lineTo(onda.x, onda.y);
                 onda.x--;
                 t++;

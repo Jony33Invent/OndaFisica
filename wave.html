@@ -26,7 +26,7 @@
             <legend style="color:aliceblue">Exemplos</legend>
             <fieldset class="espectro-visivel" style="border-radius:15px;">
                 <legend style="color:aliceblue" >Espectro da luz visível</legend>
-                <button class="info" data-toggle="modal" data-target="#myModal">?</button>
+                <button class="info inf2" data-toggle="modal" data-target="#visivespecModal">?</button>
                 <button  class="espec violeta" onclick="CriarOnda(200,380,'#973598')"></button>
                 <button class="espec anil" onclick="CriarOnda(200,440,'#0265CB')"></button>
                 <button class="espec azul" onclick="CriarOnda(200,485,'#18D2E9')"></button>
@@ -50,29 +50,73 @@
                         <input type="radio" name="tipoOnda" value="regressiva" id="tipo"> <label>Regressiva</label>
                     </div> <br />
                     <div >
-                        <label for="idAmplitude">Amplitude da Onda:</label><input class="form-control" type="number" id="idAmplitude" min="1" max="250">
+                        <label for="idAmplitude">Amplitude da Onda:</label>&ensp;<button class="info" data-toggle="modal" data-target="#amplitudeModal">?</button><input class="form-control" type="number" id="idAmplitude" min="1" max="250"> 
                     </div><br />
                     <div >
-                        <label for="idComprimento">Comprimento da Onda:</label><input class="form-control" type="number" id="idComprimento" min="10" max="250">
+                        <label for="idComprimento">Comprimento da Onda:</label>&ensp;<button class="info" data-toggle="modal" data-target="#comprimentoModal">?</button><input class="form-control" type="number" id="idComprimento" min="10" max="250"> 
                     </div>  <br />
                     <br />
                         <button class="btn btn-primary"  id="idBotao" onclick="CriarOnda(getElementById('idAmplitude').value, getElementById('idComprimento').value,'#000000')">Criar</button>
                 </form>   
             </div>
             <div class="image-box">
-                    <img src="logo.jpg" alt="">
+                    <img class="img-logo" src="logo.jpg" alt="">
                 </div>
         </div></center>
+
             <script type="text/javascript" src="script.js"></script>
-            <div id="myModal" class="modal fade" role="dialog" style="color:black">
+            <div id="visivespecModal" class="modal fade" role="dialog" style="color:black">
                     <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Informações</h4>
+                        <h3 class="modal-title">Espectro de Luz Visível</h3>
                         </div>
                         <div class="modal-body">
-                        <p>Info</p>
+                        <p>É a parte do conjunto de ondas eletromagnéticas que o olho humano consegue ver. Cada cor do espectro possui um comprimento de onda específico. </p>
+                        <p>Clicando em cada cor o programa simula a onda de luz com o seu comprimento na escala 1 nanometro para 1 pixel.</p>
+                            <img class="img-espec" src="visivel-espec.png" alt="">
+
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                
+                    </div>
+                </div>
+
+                <div id="amplitudeModal" class="modal fade" role="dialog" style="color:black">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h3 class="modal-title">Amplitude da Onda</h3>
+                        </div>
+                        <div class="modal-body">
+                        <p>É a altura da onda, a distância entre o ponto máximo da onda (crista) e o nível de equilibrio.</p>
+                            <img class="img-espec" src="amplitude.png" alt="">
+
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                
+                    </div>
+                </div>
+
+                 <div id="comprimentoModal" class="modal fade" role="dialog" style="color:black">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h3 class="modal-title">Comprimento da Onda</h3>
+                        </div>
+                        <div class="modal-body">
+                        <p>É a distância entre dois pontos mais altos da onda (crista) ou entre dois pontos mais baixos (vale). </p>
+                            <img class="img-espec" src="comprimento.png" alt="">
+
                         </div>
                         <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
