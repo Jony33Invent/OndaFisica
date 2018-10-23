@@ -27,16 +27,14 @@
         <fieldset>
             <legend style="color:aliceblue">Exemplos</legend>
             <fieldset class="espectro-visivel" style="border-radius:15px;">
-                <legend style="color:aliceblue">Espectro da luz visível
-                <button type="button" class="info" data-toggle="modal" data-target="#myModal">?</button>
-                </legend>
-                <button class="espec violeta"></button>
-                <button class="espec anil"></button>
-                <button class="espec azul"></button>
-                <button class="espec verde"></button>
-                <button class="espec amarelo"></button>
-                <button class="espec laranja"></button>
-                <button class="espec vermelho"></button>
+                <legend style="color:aliceblue" >Espectro da luz visível</legend>
+                <button  class="espec violeta" onclick="CriarOnda(200,380,'#973598')"></button>
+                <button class="espec anil" onclick="CriarOnda(200,440,'#0265CB')"></button>
+                <button class="espec azul" onclick="CriarOnda(200,485,'#18D2E9')"></button>
+                <button class="espec verde" onclick="CriarOnda(200,500,'#68CB3C')"></button>
+                <button class="espec amarelo" onclick="CriarOnda(200,565,'#F4F400')"></button>
+                <button  class="espec laranja" onclick="CriarOnda(200,590,'#F58D34')"></button>
+                <button class="espec vermelho" onclick="CriarOnda(200,625,'#F51209')"></button>
             </fieldset>
         </fieldset>
     </div>
@@ -59,7 +57,7 @@
                     <label for="idComprimento">Comprimento da Onda:</label><input class="form-control" type="number" id="idComprimento" min="10" max="250">
                 </div>  <br />
                 <br />
-                    <button class="btn btn-primary"  id="idBotao" onclick="CriarOnda(getElementById('idAmplitude').value, getElementById('idComprimento').value)">Criar</button>
+                    <button class="btn btn-primary"  id="idBotao" onclick="CriarOnda(getElementById('idAmplitude').value, getElementById('idComprimento').value,'#000000')">Criar</button>
             </form>   
         </div>
     </div></center>
