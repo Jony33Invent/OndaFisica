@@ -22,10 +22,13 @@ body{
 
 .menu{
     border: 3px solid rgba(255, 255, 255, .9);
-    margin-top: 53px;
-    margin-left: 45px;
     border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left:16%;
+    margin-right: -50%;
     height: 550px;
+    transform: translate(-50%, -50%)
 }
 
 .div-canvas{
@@ -87,19 +90,20 @@ body{
 }
 
 img{
-    width: 30%;
-    
+    width: 13%; 
 }
 
 .image-box{
-    position: absolute;
-    margin-left: 950px;
-    margin-top: 435px;
+    position: relative;
+    z-index: -1;
 }
 
 .info{
+    position: relative;
+    float:right;
+    margin-top: -60px;
     border-radius: 100px;
-    height: 30px;
+    height: 25px;
     background-color: rgb(17, 112, 35);
     outline-style: none;
 }
